@@ -1,0 +1,9 @@
+*{margin: 0px;padding: 0px;}
+#main{width: 1000px;height: 640px;margin: 30px auto;}
+#main ul li{float: left;list-style: none;width: 288px;height: 180px;border: 4px solid #fff;
+             margin: 10px 17px;box-shadow: 0px 0px 10px #000;/*阴影设置 水平 垂直 阴影范围  颜色*/
+            }
+#gray{width: 100%;height: 100%;background:rgba(0,0,0,0.5);position: fixed;top: 0px;left: 0px;display:none;}         
+.showimg{width: 650px;height: 406px;position: absolute;top: 100px;left: 350px;border: 10px solid #fff;display:none;}
+.showimg img.but_l{position: absolute;top: 170px; left: -70px;}
+.showimg img.but_r{position: absolute;top: 170px; right: -70px;}

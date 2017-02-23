@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>滚动相册</title>
+		<link rel="stylesheet" type="text/css" href="css/type.css"/>
+        
+	</head>
+	<body>
+		<!--
+        	作者：刘修乾
+        	时间：2016-01-23
+        	描述：滚动相册
+       -->
+       <!--相册列表开始-->
+		<div id="main">
+			<ul>
+				<li><img src="img/s1.jpg" bigsrc="img/big1.jpg"/></li>
+				<li><img src="img/s2.jpg" bigsrc="img/big2.jpg"/></li>
+				<li><img src="img/s3.jpg" bigsrc="img/big3.jpg"/></li>
+				<li><img src="img/s4.jpg" bigsrc="img/big4.jpg"/></li>
+				<li><img src="img/s5.jpg" bigsrc="img/big5.jpg"/></li>
+				<li><img src="img/s6.jpg" bigsrc="img/big6.jpg"/></li>
+				<li><img src="img/s7.jpg" bigsrc="img/big7.jpg"/></li>
+				<li><img src="img/s8.jpg" bigsrc="img/big8.jpg"/></li>
+				<li><img src="img/s9.jpg" bigsrc="img/big9.jpg"/></li>
+			</ul>
+		</div>
+		<!--相册列表结束-->
+		
+		<!--半透明图层开始-->
+		<div id="gray">
+			
+		</div>
+		<!--半透明图层结束-->
+		
+		<!--大图区展示开始-->
+		<div class="showimg">
+			<img src="img/big1.jpg" class="show_img"/>
+			
+			<img src="img/dirl.png" class="but_l"/>
+			<img src="img/dirr.png" class="but_r"/>
+		</div>
+		<!--大图区展示结束-->
+		
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript">
+              var _index=0;
+              var bIgm=null;
+        	 $("#main ul li").click(function(){
+        	 	_index=$(this).index();
+        	 	//alert(_index);
+        	 	$("#gray").show();
+        	 	$(".showimg").show();
+        	 	bIgm=$(this).find("img").attr("bigsrc");
+        	 	//alert(bIgm);
+        	 	$(".showimg img.show_img").attr("src",bIgm);
+        	 });
+        	 $("#gray").click(function(){
+        	 	$("#gray").hide();//隐藏
+		        $(".showimg").hide();
+        	 });
+        	 /*向右滑动开始*/
+        	 $(".showimg img.but_r").click(function(){
+        	 	_index++;
+        	 	bIgm=$("#main ul li").eq(_index).find("img").attr("bigsrc");
+        	 	$(".showimg img.show_img").attr("src",bIgm);
+        	 });
+        	 /*向右滑动结束*/
+        	 
+     	         /*向左滑动开始*/
+        	 $(".showimg img.but_l").click(function(){
+        	 	_index--;
+        	 	bIgm=$("#main ul li").eq(_index).find("img").attr("bigsrc");
+        	 	$(".showimg img.show_img").attr("src",bIgm);
+        	 });
+        	   /*向左滑动结束*/
+        </script>
+	</body>
+</html>
