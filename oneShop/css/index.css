@@ -1,0 +1,202 @@
+
+#container{
+	width: 100%;
+	height: 100%;
+	background: red;
+	overflow: hidden;
+}
+#page{
+	height: 100%;
+	width: 100%;
+}
+.pag{
+	height: 100%;
+}
+.pag1{
+	background: beige;
+	
+}
+.pag2{
+	background: brown;
+}
+.pag3{
+	background: blanchedalmond;
+}
+			
+			/*音乐*/
+.music{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 48px;
+	height: 48px;
+	border-radius:50% ;
+	/*background: red;*/
+}
+.musicIco{
+	position: relative;
+	z-index: 10;
+	width: 35px;
+	height: 35px;
+	margin-top: 15px;
+	border-radius:50%;
+	background:rgba(4,4,4,0.32) url(../img/musicIcon2.png) no-repeat 0px 0px;
+	background-size: 35px;
+}
+.revolve{
+	animation: music 1s linear infinite;
+	-moz-animation: music 1s linear infinite;
+	-webkit-animation: music 1s linear infinite;
+	-ms-animation: music 1s linear infinite;
+	-o-animation: music 1s linear infinite;
+}
+@keyframes music{
+	0%{
+		transform:rotate(0deg);
+	}
+	50%{
+		transform:rotate(180deg);
+	}
+	100%{
+		transform:rotate(360deg);
+	}
+}
+@-webkit-keyframes music{
+	0%{
+		-webkit-transform:rotate(0deg);
+	}
+	50%{
+		-webkit-transform:rotate(180deg);
+	}
+	100%{
+		-webkit-transform:rotate(360deg);
+	}
+}
+@-moz--keyframes music{
+	0%{
+		-moz-transform: rotate(0deg);
+	}
+	50%{
+		-moz-transform: rotate(180deg);
+	}
+	100%{
+		-moz-transform: rotate(360deg);
+	}
+}
+@-o-keyframes music{
+	0%{
+		-o-transform:rotate(0deg);
+	}
+	50%{
+		-o-transform:rotate(180deg);
+	}
+	100%{
+		-o-transform:rotate(360deg);
+	}
+}
+@-ms-keyframes music{
+	0%{
+		-ms-transform:rotate(0deg);
+	}
+	50%{
+		-ms-transform:rotate(180deg);
+	}
+	100%{
+		-ms-transform:rotate(360deg);
+	}
+}
+
+/*音符动画*/
+.musicalNote{
+  height: 70px;
+  width: 50px;
+  top: -20px;
+  position: absolute;
+  background: red;
+  overflow: hidden;
+}
+.musicalNoteIcon{
+	display: inline-block;
+	width: 15px;
+	height: 25px;
+	position: absolute;
+	bottom: 0px;
+	right: 10px;
+}
+.span1{
+	background: url(../img/globalAudio.png) no-repeat 0px 0px;
+	background-size: 10px;
+}
+
+
+
+/*上滑图标*/
+.slideUp{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	margin-left: -25px;
+	background: url(../img/slideUp.png) no-repeat 0px 0px;
+	background-size: 50px;
+	animation: slideUp 1.5s linear infinite;
+	-moz-animation: slideUp 1.5s linear infinite;
+	-webkit-animation: slideUp 1.5s linear infinite;
+	-ms-animation: slideUp 1.5s linear infinite;
+	-o-animation: slideUp 1.5s linear infinite;
+}
+
+@keyframes slideUp{
+	0%{
+		bottom: 20px;
+		opacity: 1;
+	}
+	100%{
+		bottom: 30px;
+		opacity: 0;
+	}
+}
+@-moz-keyframes slideUp{
+	0%{
+		bottom: 20px;
+		opacity: 1;
+	}
+	100%{
+		bottom: 30px;
+		opacity: 0;
+	}
+}
+@-webkit-keyframes slideUp{
+	0%{
+		bottom: 20px;
+		opacity: 1;
+	}
+	100%{
+		bottom: 30px;
+		opacity: 0;
+	}
+}
+@-ms-keyframes slideUp{
+	0%{
+		bottom: 20px;
+		opacity: 1;
+	}
+	100%{
+		bottom: 30px;
+		opacity: 0;
+	}
+}
+@-o-keyframes slideUp{
+	0%{
+		bottom: 20px;
+		opacity: 1;
+	}
+	100%{
+		bottom: 30px;
+		opacity: 0;
+	}
+}
+
+
+

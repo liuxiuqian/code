@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/animate.css"/>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div id="page">
+				<section class="pag pag1">1</section>
+				<section class="pag pag2">2</section>
+				<section class="pag pag3">3</section>
+				<section class="pag pag2">4</section>
+				<section class="pag pag3">5</section>
+			</div>
+			<!--音乐图标-->
+			<div class="music">
+				<div class="musicalNote">
+					<span class="musicalNoteIcon span1"></span>
+				</div>
+				<div class="musicIco revolve"></div>
+				<audio id="audiobgm" loop="loop" autoplay="autoplay" preload="preload" src="img/bgm.mp3"></audio>
+			</div>
+			<!--上滑图标-->
+			<div class="slideUp">
+				
+			</div>
+			
+		</div>
+		<script src="js/zepto.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var audioPlayer = document.querySelector('audio#audiobgm');
+			function init(){
+				//判断uc浏览器
+				if(navigator.userAgent.indexOf('UCBrowser') > -1) {
+			    $(".musicIco").removeClass("revolve");
+			    audioPlayer.pause();
+				}
+				even();
+			}
+			
+			//事件函数
+			function even(){
+				var index = 0;
+				var make = 0;//标记首次上滑
+				var pageNum = $("#page section").length;//页面个数
+				var heightDiv = $("#container").height();//页面高度
+				//播放暂停事件
+				$(".music").click(function(){
+					if (audioPlayer.paused) {
+	//				  alert("暂停中");
+						$(".musicIco").addClass("revolve");
+					  audioPlayer.play();
+					} else {
+	//				  alert("播放中");
+						$(".musicIco").removeClass("revolve");
+					  audioPlayer.pause();
+					}
+				})
+				$(".slideUp").click(function(){
+					console.log(index);
+					if(index >= pageNum-1){
+						index = pageNum-1;
+					}else{
+						index++;
+						$("#page").animate({
+							marginTop: "-"+heightDiv*index+"px"
+						},350);
+						if(make == 0){
+							$(".musicIco").addClass("revolve");
+							audioPlayer.play();
+							make = 1;
+						}
+					}
+				})
+				$("#page").on("swipeUp","section",function(){
+					var index1 = $(this).index()+1;
+					console.log(index1);
+					if(index1 == pageNum){
+						index = pageNum-1;
+					}else{
+						index++
+						$("#page").animate({
+								marginTop: "-"+heightDiv*index+"px"
+							},350);
+							if(make == 0){
+								$(".musicIco").addClass("revolve");
+								audioPlayer.play();
+								make = 1;
+							}
+					}
+				})
+				$("#page").on("swipeDown","section",function(){
+					var index2 = $(this).index()-1;
+					if(index2 < 0){
+						
+					}else{
+						index--;
+						console.log(index)
+						$("#page").animate({
+							marginTop: "-"+heightDiv*index+"px"
+						},350);
+					}
+				})
+				
+				
+			}
+			
+			
+			//程序入口
+			init();
+			
+		</script>
+	</body>
+</html>
