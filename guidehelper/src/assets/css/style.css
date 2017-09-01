@@ -1,0 +1,108 @@
+
+.ml30{
+	margin-left: 30px;
+}
+.ml40{
+	margin-left: 40px;
+}
+.ml50{
+	margin-left: 50px;
+}
+.ml70{
+	margin-left: 70px;
+}
+.ml20{
+	margin-left: 20px;
+}
+.ml15{
+	margin-left: 15px;
+}
+.ml10{
+	margin-left: 10px;
+}
+.mt40{
+	margin-top: 40px;
+}
+.mt10{
+	margin-top: 10px;
+}
+.mt20{
+	margin-top: 20px;
+}
+.mt30{
+	margin-top: 30px;
+}
+.mb0{
+	margin-bottom: 0;
+}
+.mb20{
+	margin-bottom: 20px;
+}
+.mtb10{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.inputwidth{
+	width: 250px;
+}
+
+.pd10{
+	padding: 10px;
+}
+.pd5{
+	padding: 5px;
+}
+.ptb10{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.ptb5{
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.plr10{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.plr5{
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.plr0{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.redcolor{
+	color: red;
+}
+.orangecolor{
+	color: orange;
+}
+.lancolor{
+	color: #0088cc;
+}
+
+
+.bd{
+	border: 1px solid #ccc;
+}
+.bglv{
+	background: #5cb85c;
+}
+
+.xiao{
+	padding: 2px 5px;
+}
+.xiao0{
+	padding: 3px 0;
+	width: 20%;
+}
+.none{
+	display: none;
+}
+
+.text2em{
+	text-indent: 2em;
+}
