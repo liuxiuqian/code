@@ -28,6 +28,11 @@ npm test
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## 1、测试项目
+
+技术栈：node + webpack + vue-cli + vuex + axios + 等
+
+实现：完成路由的拦截
 
 ## 2.vue+axios 前端实现登录拦截（路由拦截、http拦截）
 - localStorage存储登录状态，利用vuex（状态管理器）进行判断，利用vue-router提供的钩子函数beforeEach()对路由进行判断，axios进行请求http拦截。
