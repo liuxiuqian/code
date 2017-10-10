@@ -14,7 +14,12 @@
 	<body>
 		<div id="container">
 			<div id="page">
-				<section class="pag pag1">1</section>
+				<section class="pag pag1">
+					<img class="sencimg" src="img/bg1.jpg"/>
+					<div class="bgcon">
+						<img class="animated2 fadeInDown" src="img/bg11.png"/>
+					</div>
+				</section>
 				<section class="pag pag2">2</section>
 				<section class="pag pag3">3</section>
 				<section class="pag pag2">4</section>
@@ -32,10 +37,21 @@
 			<div class="slideUp">
 				
 			</div>
-			
+			<!--底部bar-->
+			<div class="fooderbar">
+				<div class="bar"></div>
+			</div>
 		</div>
 		<script src="js/zepto.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
+			
+			function stopDrop() {
+			  $("body").on("touchmove",function(e){
+			  	e.preventDefault();
+			  })
+			}
+			stopDrop();
+			
 			var audioPlayer = document.querySelector('audio#audiobgm');
 			function init(){
 				//判断uc浏览器
@@ -52,20 +68,18 @@
 				var make = 0;//标记首次上滑
 				var pageNum = $("#page section").length;//页面个数
 				var heightDiv = $("#container").height();//页面高度
+				$(".bar").width((100/pageNum)*1+"%");
 				//播放暂停事件
 				$(".music").click(function(){
 					if (audioPlayer.paused) {
-	//				  alert("暂停中");
 						$(".musicIco").addClass("revolve");
 					  audioPlayer.play();
 					} else {
-	//				  alert("播放中");
 						$(".musicIco").removeClass("revolve");
 					  audioPlayer.pause();
 					}
 				})
 				$(".slideUp").click(function(){
-					console.log(index);
 					if(index >= pageNum-1){
 						index = pageNum-1;
 					}else{
@@ -79,10 +93,11 @@
 							make = 1;
 						}
 					}
+					var _ind = index+1;
+					$(".bar").width((100/pageNum)*_ind+"%");
 				})
 				$("#page").on("swipeUp","section",function(){
 					var index1 = $(this).index()+1;
-					console.log(index1);
 					if(index1 == pageNum){
 						index = pageNum-1;
 					}else{
@@ -96,6 +111,8 @@
 								make = 1;
 							}
 					}
+					var _ind = index+1;
+					$(".bar").width((100/pageNum)*_ind+"%");
 				})
 				$("#page").on("swipeDown","section",function(){
 					var index2 = $(this).index()-1;
@@ -103,11 +120,12 @@
 						
 					}else{
 						index--;
-						console.log(index)
 						$("#page").animate({
 							marginTop: "-"+heightDiv*index+"px"
 						},350);
 					}
+					var _ind = index+1;
+					$(".bar").width((100/pageNum)*_ind+"%");
 				})
 				
 				
